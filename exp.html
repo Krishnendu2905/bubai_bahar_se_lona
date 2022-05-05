@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT's BUBAI</title>
+</head>
+<style>
+    table,tr,td{
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <div class="titleobjective">
+        <h2>TITLE: Electronic system design employing electronic hardware.</h2>
+        <h3>OBJECTIVE: With the help of the motor driver and an Ultrasonic sensor design an automatic car.</h3>
+    </div>
+    <div class="equip">
+        <h3>EQUIPMENTS: Arduino/Nodemcu, Ultrasonic sensor-HCSR04,Two motor driver(L298N),  battery and a toy car.</h3>
+        <h3>Description of equipments:</h3>
+        <p id="arduino">
+            <h4>ARDUINO:</h4>
+          Arduino is an open-source electronics platform based on easy-to-use hardware and software. Arduino boards are able to read inputs - light on a sensor, a finger on a button, or a Twitter message - and turn it into an output - activating a motor, turning on an LED, publishing something online. You can tell your board what to do by sending a set of instructions to the microcontroller on the board. To do so you use the Arduino programming language (based on Wiring), and the Arduino Software (IDE), based on Processing.
+        </p>
+        <br>
+        <p id="ultrasonic">
+            <h3>Ultrasonic Sensor_HCSR04:</h3>
+            The HC-SR04 Ultrasonic Distance Sensor is a sensor used for detecting the distance to an object using sonar. It's ideal for any robotics projects your have which require you to avoid objects, by detecting how close they are you can steer away from them!
+            The HC-SR04 Ultrasonic Range Sensor Features:
+            <ul>
+                <li> •  Input Voltage: 5V</li>
+                <li>•	Current Draw: 20mA (Max)</li>
+                <li>•	Digital Output: 0V (Low)</li>
+                <li>•	Working Temperature:  -15°C to 70°C</li>
+                <li>•	Sensing Angle: 30° Cone</li>
+                <li>•	Angle of Effect: 15° Cone</li>
+                <li>•	Ultrasonic Frequency: 40kHz</li>
+                <li>•	Range: 2cm - 400cm</li>
+            </ul>
+        </p>
+        <p id="motor_driver">
+            <h3>  Motor Driver(L298N): </h3>
+          Motor drivers acts as an interface between the motors and the control circuits. Motor require high amount of current whereas the controller circuit works on low current signals. So the function of motor drivers is to take a low-current control signal and then turn it into a higher-current signal that can drive a motor.
+          <h4> L298N pin configerations.</h4>
+          <h4>Output Pins</h4>
+          The L298N motor driver's output channels for the motor A and B are broken out to the edge of the module with two 3.5mm-pitch screw terminals.
+            You can connect two DC motors having voltages between 5 to 35V to these terminals. Each channel on the module can deliver up to 2A to the DC motor. However, the amount of current supplied to the motor depends on system's power supply.
+        <h4> Control Pins</h4>
+            For each of the L298N’s channels, there are two types of control pins which allow us to control speed and spinning direction of the DC motors at the same time viz. Direction control pins & Speed control pins.
+            <h4>Direction Control Pins</h4>
+            Using the direction control pins, we can control whether the motor spins forward or backward. These pins actually control the switches of the H-Bridge circuit inside L298N IC.
+            The module has two direction control pins for each channel. The IN1 and IN2 pins control the spinning direction of the motor A while IN3 and IN4 control motor B.
+            The spinning direction of a motor can be controlled by applying either a logic HIGH(5 Volts) or logic LOW(Ground) to these inputs. The below chart illustrates how this is done.
+            <table>
+                <th>Input1</th>
+                <th>Input2</th>
+                <th>Spinning Direction</th>
+                <tr>
+                    <td>Low(0)</td>
+                    <td>Low(0)</td>
+                    <td>MotorOFF</td>
+                </tr>
+                <tr>
+                    <td>High(1)</td>
+                    <td>Low(0)</td>
+                    <td>Forward</td>
+                </tr>
+                <tr>
+                    <td>Low(0)</td>
+                    <td>High(1)</td>
+                    <td>Backward</td>
+                </tr>
+                <tr>
+                    <td>High(1)</td>
+                    <td>High(1)</td>
+                    <td>MotorOFF</td>
+                </tr>
+            </table>
+           <h4> Speed Control Pins</h4>
+            The speed control pins viz. ENA and ENB are used to turn the motors ON, OFF and control its speed.
+            Pulling these pins HIGH will make the motors spin, pulling it LOW will make them stop. But, with Pulse Width Modulation (PWM), we can actually control the speed of the motors.
+            The module usually comes with a jumper on these pins. When this jumper is in place, the motor is enabled and spins at maximum speed. If you want to control the speed of motors programmatically, you need to remove the jumpers and connect them to PWM-enabled pins on Arduino.
+
+            <h4>GND</h4> is a common ground pin.
+            <h4>5V pin</h4> supplies power for the switching logic circuitry inside L298N IC. If the 5V-EN jumper is in place, this pin acts as an output and can be used to power up your Arduino. If the 5V-EN jumper is removed, you need to connect it to the 5V pin on Arduino.
+        </p>
+        <p id="algo">
+           <h4> Algorithm to write the code inside arduino ide software:</h4>
+            Step-1: START <br>
+            Step-2: define Pwm pins of motor driver(L298N) as variables(PWM1,PWM2). <br>
+            Step-3: define input pins for both the motors as variables(d1,d2,d3,d4).<br>
+            Step-4: initialize class HCSR04 and set the trig pin and echo pins of ultrasonic sensor.
+            (HCSR04 hc(trig_pin,echo_pin))<br>
+            Step-5: take an integer type variable to store the data of the measured distance:<br>
+            INSIDE VOID SETUP<br>
+            Step-6: begin serial monitor.<br>
+            Step-7: set the pin-modes of the used pins which are defined previously.
+            All pins must be set in output mode.<br>
+            INSIDE VOID LOOP<br>
+            Step-8: Use a function hc.dist() and store it’s data to the step-5 variable. <br>
+            Step-9: use digitalwrite command to make the d1 pin high, d2 pin low
+            And d3 high and d4 low;<br>
+            Step-10: take a condition as per your choice to make the car stop within a distance from the obstacle.
+            Use digitalwrite to make all the inputpins low inside this condition.<br>
+            Step-11: map the value of the step-5 variable between 0 to 255. And store the mapped value inside a variable.<br>
+            Step-12: give the mapped value of the previous step to the (PWM1,PWM2 ) pins using analogwrite.<br>
+            Step-13:STOP
+        </p>
+        <p class="circuit_dia">
+            <h4>CIRCUIT DIAGRAM:</h4>
+            <img src="Screenshot (200).png" alt="">
+        </p>
+    </div>
+</body>
+</html>
