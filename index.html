@@ -4,33 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT's BUBAI</title>
+    <title>it's BUBAI</title>
 </head>
 <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
     body{
         background-color: rgb(15, 172, 15);
+        background-image: url("ImageDetail_fd3463c4-f15b-4991-9353-627cbc4e0274_Large.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        
     }
+    /* #vi{
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+
+    } */
     .titleobjective{
+        color: aqua;
         padding-left: 5vw;
         margin-top: 10vh;
+        margin-bottom: 5vh;
         height: 5vw;
-        border: 2 px solid black;
         box-sizing: border-box;
         text-align: center;
+        font-size: 4vh;
     }
     .equip{
+        color: rgb(226, 225, 209);
         padding-left: 5vw;
-        margin-top: 10vh;
+        margin-top: 20vh;
         height: 10vw;
-        border: 2 px solid black;
+        margin-bottom: 5vh;
+        /* border: 2px solid black; */
         box-sizing: border-box;
         text-align: center;
+        font-size: 4vh;
     }
     #b1{
         display: block;
         width: 40vw;
         height: 20vh;
-       font-size:20px;
+       font-size:2vw;
        text-align: center;
        display: inline;
        background-color: blue;
@@ -40,7 +62,7 @@
         display: block;
         width: 40vw;
         height: 20vh;
-       font-size:20px;
+       font-size:2vw;
        text-align: center;
        display: inline;
        background-color: blueviolet;
@@ -49,9 +71,9 @@
         display: block;
         width: 40vw;
         height: 20vh;
-       font-size:20px;
+       font-size:2vw;
        text-align: center;
-        margin-top: 5px;
+        margin-top: 2vh;
         display: inline-block;
         background-color: rgb(236, 24, 155);
         margin-left:20vh;
@@ -62,38 +84,41 @@
         display: block;
         width: 40vw;
         height: 20vh;
-       font-size:20px;
+       font-size:2vw;
        text-align: center;
-        margin-top: 5px;
+        margin-top: 2vh;
         display: inline-block;
         background-color: rgb(184, 210, 16);
     }
-        #b5{
+
+    #b5{
         display: block;
         width: 40vw;
         height: 20vh;
-       font-size:20px;
+       font-size:2vw;
        text-align: center;
-        margin-top: 5px;
-        margin-left: 425px;
+        margin-top: 2vh;
+        margin-left: 65vh;
         background-color: rgb(16, 200, 210);
     }
 
+
 </style>
 <body>
+    <!-- <video autoplay muted loop id="vi"><source src="181015_13_Venice Beach Drone_25_preview.webm" type="video/mp4"></video> -->
     <div class="titleobjective">
         <h2>TITLE: Electronic system design employing electronic hardware.</h2>
         <h3>OBJECTIVE: With the help of the motor driver and an Ultrasonic sensor design an automatic car.</h3>
     </div>
     <div class="equip">
         <h3>EQUIPMENTS: Arduino/Nodemcu, Ultrasonic sensor-HCSR04,Two motor driver(L298N),  battery and a toy car.</h3>
-        <h3>Description of equipments:</h3>
+        <br>
+        <h2>Description of equipments:</h2>
     </div>
     <button id="b1" onclick="location.href='arduino.html'">ARDUINO</button>
     <button id="b2" onclick="location.href='ultra.html'">ULTRASONIC SENSOR</button>
-    <button id="b3" onclick="location.href='motor_dr.html'">MOTOR DRIVER</button>
+    <button id="b3" onclick="location.href='exp.html'">MOTOR DRIVER</button>
     <button id="b4" onclick="location.href='algo.html'">ALGORITHM</button>
     <button id="b5" onclick="location.href='circuit.html'">CIRCUIT</button>
-
 </body>
 </html>
