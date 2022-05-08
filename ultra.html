@@ -21,6 +21,15 @@
     <div id="ultrasonic">
         <h3>Ultrasonic Sensor_HCSR04:</h3>
         The HC-SR04 Ultrasonic Distance Sensor is a sensor used for detecting the distance to an object using sonar. It's ideal for any robotics projects your have which require you to avoid objects, by detecting how close they are you can steer away from them!
+        The HC-SR04 uses non-contact ultrasound sonar to measure the distance to an object, and consists of two ultrasonic transmitters (basically speakers), a receiver, and a control circuit. The transmitters emit a high frequency ultrasonic sound, which bounce off any nearby solid objects, and the reciever listens for any return echo. That echo is then processed by the control circuit to calculate the time difference between the signal being transmitted and received. This time can subsequently be used, along with some clever math, to calculate the distance between the sensor and the reflecting object!
+
+We have this sensor, and along with our Ultrasonic mounting kit, you can easily attach this sensor to your project and get measuring distances!
+
+Using an UltraBorg you can connect up to 4 of these HC-SR04 sensors to obtain precise distance measurements without effecting CPU load, or alternatively you can connect one directly to your Raspberry Pi using a few resistors; see this tutorial for details.
+
+The HC-SR04 is great, as it's low cost, can be powered  via the Raspberry Pi's 5V output, and is relatively accurate! Please Note. The HC-SR04 has a 5V output (which needs to be reduced to 3.3V to work with the Raspberry Pi).
+
+The HC-SR04 sensor works best between 2cm – 400 cm (1" - 13ft) within a 30 degree cone, and is accurate to the nearest 0.3cm.
         The HC-SR04 Ultrasonic Range Sensor Features:
         <ul>
             <li> •  Input Voltage: 5V</li>
